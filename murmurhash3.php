@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * PHP Implementation of MurmurHash3
+ *
+ * @author Stefano Azzolini (lastguest@gmail.com)
+ * @see https://github.com/lastguest/murmurhash-php
+ * @author Gary Court (gary.court@gmail.com)
+ * @see http://github.com/garycourt/murmurhash-js
+ * @author Austin Appleby (aappleby@gmail.com)
+ * @see http://sites.google.com/site/murmurhash/
+ *
  * @param  string $key   Text to hash.
  * @param  integer $seed  Positive integer only
  * @return integer 32-bit positive integer hash
