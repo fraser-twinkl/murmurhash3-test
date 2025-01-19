@@ -68,6 +68,9 @@ Using a non-zero seed of `123` also identified a small number of divergent hashe
 
 While PHP's built-in `murmur3a` appears consistent with the `murmurhash3` modularised JavaScript implementation, the custom PHP implementation of `hash3Int` does not. 
 
+I have rasied this as an issue on `lastguest/murmurhash-php` here: https://github.com/lastguest/murmurhash-php/issues/16
+
+
 ## Contributing
 
 Feel free to submit issues or pull requests if you find any bugs or have improvements to suggest :)
