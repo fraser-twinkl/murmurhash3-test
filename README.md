@@ -44,7 +44,7 @@ Initial testing revealed no discrepancies between PHP's built-in `murmur3a` func
 
 Even the previously problematic key `sideBarRecommendations202501135278833` returns the same hash in this case. 
 
-### PHP hash3Int vs JS murmurhash3
+### PHP hash3Int vs JS murmurhash3 (zero seed)
 
 ```
 PHP version: 8.1.2-1ubuntu2.20
@@ -54,7 +54,7 @@ Seed: 0
 
 Testing with a custom PHP implementation `hash3Int` identified a small number of divergent hashes (5 out of 100,000). These keys are listed in `known_bad_keys_0.txt`.
 
-### PHP hash3Int vs JS murmurhash3
+### PHP hash3Int vs JS murmurhash3 (non-zero seed)
 
 ```
 PHP version: 8.1.2-1ubuntu2.20
