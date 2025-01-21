@@ -40,7 +40,7 @@ Node.js version: v18.20.4
 Seed: 0
 ```
 
-Initial testing revealed no discrepancies between PHP's built-in `murmur3a` function and the `murmurhash3` modularised JavaScript implementation, this was across a large number of iterations (100,000) in 3 rounds of testing. 
+Initial testing revealed no discrepancies between PHP's built-in `murmur3a` function and the `murmurhash3` modularised JavaScript implementation, this was across a large number of iterations (300,000) in 3 rounds (100,000) of testing. 
 
 Even the previously problematic key `sideBarRecommendations202501135278833` returns the same hash in this case. 
 
