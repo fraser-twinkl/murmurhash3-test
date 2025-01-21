@@ -21,8 +21,9 @@
  */
 function hash3Int_fc($key, $seed = 0)
 {
-    $klen = strlen($key);
-    $h1 = $seed;
+    $key = array_values(unpack('C*', $key));
+    $klen = count($key);
+    $h1 = $seed < 0 ? -$seed : $seed;
 
     //  (fix #1) - correctly perform unsigned right shift
     $u32rs = function ($a, $b) {
@@ -44,10 +45,10 @@ function hash3Int_fc($key, $seed = 0)
     };
 
     for ($i = 0, $bytes = $klen - ($remainder = $klen & 3); $i < $bytes; ) {
-        $k1 = ((ord($key[$i]) & 0xff))
-            | ((ord($key[++$i]) & 0xff) << 8)
-            | ((ord($key[++$i]) & 0xff) << 16)
-            | ((ord($key[++$i]) & 0xff) << 24);
+        $k1 = (($key[$i] & 0xff))
+            | (($key[++$i] & 0xff) << 8)
+            | (($key[++$i] & 0xff) << 16)
+            | (($key[++$i] & 0xff) << 24);
         ++$i;
 
         $k1 = $u32m($k1, 0xcc9e2d51);
@@ -62,11 +63,11 @@ function hash3Int_fc($key, $seed = 0)
     $k1 = 0;
     switch ($remainder) {
         case 3:
-            $k1 ^= (ord($key[$i + 2]) & 0xff) << 16;
+            $k1 ^= ($key[$i + 2] & 0xff) << 16;
         case 2:
-            $k1 ^= (ord($key[$i + 1]) & 0xff) << 8;
+            $k1 ^= ($key[$i + 1] & 0xff) << 8;
         case 1:
-            $k1 ^= (ord($key[$i]) & 0xff);
+            $k1 ^= $key[$i] & 0xff;
             $k1 = $u32m($k1, 0xcc9e2d51);
             $k1 = (($k1 << 15) | $u32rs($k1, 17)) & 0xFFFFFFFF;
             $k1 = $u32m($k1, 0x1b873593);
