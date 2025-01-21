@@ -85,7 +85,7 @@ The key changes I've made to fix the implementation are
 - Fixed the final mixing steps to properly handle unsigned operations.
 
 When I test PHP's built-in `murmur3a` and/or the `murmurhash3` modularised JavaScript implementation against `hash3Int_fc` there are no divergences.
-Even in a large number of iterations (0 out of 100,000,000)
+Even in a large number of iterations (0 out of 1,000,000)
 
 see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_murmurhash3_fixed.php
 
