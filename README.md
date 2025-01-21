@@ -86,6 +86,8 @@ The key changes I've made to fix the implementation are
 
 Now when I test PHP's built-in `murmur3a` against `hash3Int_fc` there are no divergences, in one million iterations
 
+see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_murmurhash3_fixed.php
+
 ```
 Running: 1000000 iterations
 PHP version: 8.1.2-1ubuntu2.20
