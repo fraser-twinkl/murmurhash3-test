@@ -38,7 +38,6 @@ function hash3Int_fc($key, $seed = 0)
         $a &= 0xFFFFFFFF;
         $b &= 0xFFFFFFFF;
         $lo = ($a & 0xFFFF) * ($b & 0xFFFF);
-        $hi = ($a >> 16) * ($b >> 16);
         $mid = ($a >> 16) * ($b & 0xFFFF) + ($a & 0xFFFF) * ($b >> 16);
         $result = $lo + ($mid << 16);
         return $result & 0xFFFFFFFF;
