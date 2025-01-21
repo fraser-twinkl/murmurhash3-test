@@ -87,7 +87,19 @@ The key changes I've made to fix the implementation are
 When I test PHP's built-in `murmur3a` and/or the `murmurhash3` modularised JavaScript implementation against `hash3Int_fc` there are no divergences.
 Even in a large number of iterations (0 out of 1,000,000)
 
-see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_murmurhash3_fixed.php
+### js murmurhash3 vs hash3Int_fc
+see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_murmurhash3_fixed.php 
+
+```
+Running: 1000000 iterations
+PHP version: 8.1.2-1ubuntu2.20
+Seed: 0
+Progress: 1000000/1000000
+All hashes matched!
+```
+
+### murmur3a vs hash3Int_fc
+see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test2_murmurhash3_fixed.php
 
 ```
 Running: 1000000 iterations
