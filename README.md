@@ -81,7 +81,7 @@ The main issues in the original implementation were:
 The key changes I've made to fix the implementation are 
 
 - Added proper unsigned multiplication handling through a helper function. This was the main source of divergence, as PHP's native multiplication can produce incorrect results with large 32-bit values.
-- Improved the unsigned right shift implementation to handles edge cases.
+- Improved the unsigned right shift implementation to handle edge cases.
 - Fixed the final mixing steps to properly handle unsigned operations.
 
 When I test PHP's built-in `murmur3a` and/or the `murmurhash3` modularised JavaScript implementation against `hash3Int_fc` there are no divergences.
