@@ -70,6 +70,29 @@ While PHP's built-in `murmur3a` appears consistent with the `murmurhash3` modula
 
 I have rasied this as an issue on `lastguest/murmurhash-php` here: https://github.com/lastguest/murmurhash-php/issues/16
 
+## Resolution 
+
+The main issues in the original implementation were:
+
+- Incorrect handling of unsigned multiplication, especially for large numbers
+- Inconsistent handling of 32-bit unsigned integers
+- The complex bit manipulation for the "mixing" steps wasn't properly accounting for PHP's signed integer behaviour
+
+The key changes I've made to fix the implementation are 
+
+- Added proper unsigned multiplication handling through a helper function. This was the main source of divergence, as PHP's native multiplication can produce incorrect results with large 32-bit values.
+- Improved the unsigned right shift implementation to handles edge cases.
+- Fixed the final mixing steps to properly handle unsigned operations.
+
+Now when I test PHP's built-in `murmur3a` against `hash3Int_fc` there are no divergences, in one million iterations
+
+```
+Running: 1000000 iterations
+PHP version: 8.1.2-1ubuntu2.20
+Seed: 0
+Progress: 1000000/1000000
+All hashes matched!
+```
 
 ## Contributing
 
