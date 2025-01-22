@@ -31,7 +31,10 @@ function hash3Int_fc($key, $seed = 0)
             return $a;
         }
 
-        return ($a >> $b) & ~(1 << (8 * PHP_INT_SIZE - 1) >> ($b - 1));
+        $shifted = $a >> $b;
+        $mask = 0xFFFFFFFF >> $b;
+
+        return $shifted & $mask;
     };
 
     // (fix #2) - correctly handle unsigned 32-bit multiplication
@@ -41,6 +44,7 @@ function hash3Int_fc($key, $seed = 0)
         $lo = ($a & 0xFFFF) * ($b & 0xFFFF);
         $mid = ($a >> 16) * ($b & 0xFFFF) + ($a & 0xFFFF) * ($b >> 16);
         $result = $lo + ($mid << 16);
+        
         return $result & 0xFFFFFFFF;
     };
 
