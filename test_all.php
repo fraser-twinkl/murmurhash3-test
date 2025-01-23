@@ -20,8 +20,8 @@ function runTests($numTests, $batchSize)
             $batchKeys[] = generateRandomKey();
         }
 
-        $process = proc_open('node murmurhash-batch.mjs', [0 => ['pipe', 'r'], 1 => ['pipe', 'w']], $pipes);
-        
+        $process = proc_open('node murmurhash-batch.mjs', [['pipe', 'r'], ['pipe', 'w']], $pipes);
+
         fwrite($pipes[0], json_encode(['keys' => $batchKeys, 'seed' => $seed]));
         fclose($pipes[0]);
 
