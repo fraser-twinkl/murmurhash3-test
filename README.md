@@ -93,6 +93,7 @@ see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_murmurhash3
 ```
 Running: 1000000 iterations
 PHP version: 8.1.2-1ubuntu2.20
+Node.js version: v18.20.4
 Seed: 0
 Progress: 1000000/1000000
 All hashes matched!
