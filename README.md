@@ -90,6 +90,10 @@ Even in a large number of iterations (0 out of 1,000,000)
 ### JS murmurhash3 vs PHP hash3Int_fc
 see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_murmurhash3_fixed.php 
 
+```bash
+php test_murmurhash3_fixed.php <iterations> <seed>
+```
+
 ```
 Running: 1000000 iterations
 PHP version: 8.1.2-1ubuntu2.20
@@ -101,6 +105,10 @@ All hashes matched!
 
 ### PHP murmur3a vs PHP hash3Int_fc
 see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test2_murmurhash3_fixed.php
+
+```bash
+php test2_murmurhash3_fixed.php <iterations> <seed>
+```
 
 ```
 Running: 1000000 iterations
