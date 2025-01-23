@@ -122,8 +122,9 @@ All hashes matched!
 see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_all.php
 
 This is a combined test that generates hashes in all 3 implementations and compares them against each other.
-It batches the keys and uses a random seed for each batch.
-It is simply much faster way of comparing the implemenations whilst also testing non-zero keys. 
+It batches the random keys and then uses a random seed for each batch of tests.
+By defualt it will genereate 1000000 random keys, then test them in batches of 1000, with each batch using a random non-zero seed.
+It is simply much faster way of comparing the implemenations at once whilst also testing non-zero seeds. 
 
 ```bash
 php test_all.php <iterations> <batchsize>
