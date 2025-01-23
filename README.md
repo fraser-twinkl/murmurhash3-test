@@ -27,7 +27,7 @@ php test_murmurhash3.php <iterations> <seed>
 
 The test suite generates random keys in the following format:
 
-`<string (random 10-30 characters)><random date (YYYYMMDD)><random int (1000-9999999)>`
+`random <string (10-30 characters)><random date (YYYYMMDD)><random int (1000-9999999)>`
 
 These are approximate to the kinds of keys we generate in real world use. 
 
@@ -106,6 +106,30 @@ Running: 1000000 iterations
 PHP version: 8.1.2-1ubuntu2.20
 Seed: 0
 Progress: 1000000/1000000
+All hashes matched!
+```
+
+### PHP murmur3a vs JS murmurhash3 vs PHP hash3Int_fc (non-zero seeds)
+see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_all.php
+
+This is a combined test that generates hashes in all 3 implementations and compares them against each other.
+It batches the keys and uses a random seed for each batch.
+It is simply much faster way of comparing the implemenations whilst also testing non-zero keys. 
+
+```bash
+php test_all.php <iterations> <batchsize>
+```
+
+`<iterations>`: (Optional) The number of random keys to generate and test. Defaults to `1000000`.
+
+`<batchsize>`: (Optional) The size for each batch of tests. Defaults to `1000`.
+
+```
+Running: 1000000 iterations
+PHP version: 8.1.2-1ubuntu2.20
+Node version: v18.20.4
+Batch size: 1000
+Batch: 1000 Seed: 87053 Progress: 1000000/1000000
 All hashes matched!
 ```
 
