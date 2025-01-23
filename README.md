@@ -123,7 +123,7 @@ see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_all.php
 
 This is a combined test that generates hashes in all 3 implementations (i.e. the known good JS and PHP versions, along with the fixed PHP version) and compares them against each other.
 It batches random keys and then uses a random seed for each batch of tests.
-By defualt it will genereate 1000000 random keys, then test them in batches of 1000, with each batch using a random non-zero seed.
+By default it will genereate 1000000 random keys, then test them in batches of 1000, with each batch using a random non-zero seed.
 It is simply much faster way of comparing the implemenations at once whilst also testing non-zero seeds. 
 
 ```bash
