@@ -27,7 +27,7 @@ php test_murmurhash3.php <iterations> <seed>
 
 The test suite generates random keys in the following format:
 
-`<random string (10-30 characters)><random date (YYYYMMDD)><random int (1000-9999999)>`
+`<random string (10-50 characters)><random date (YYYYMMDD)><random int (1000-9999999)>`
 
 These are approximate to the kinds of keys we generate in real world use. 
 
