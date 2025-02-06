@@ -144,6 +144,7 @@ All hashes matched!
 ```
 
 ### PHP murmur3a vs PHP hash3Int_fc_opt
+see https://github.com/fraser-twinkl/murmurhash3-test/blob/main/test_murmurhash3_optimised.php
 
 ```bash
 php test_murmurhash3_optimised.php <iterations> <seed>
