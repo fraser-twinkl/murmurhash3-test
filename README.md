@@ -162,6 +162,17 @@ Progress: 1000000/1000000
 All hashes matched!
 ```
 
+non-zero seed
+
+```
+php test_murmurhash3_optimised.php 1000000 123
+Running: 1000000 iterations
+PHP version: 8.1.2-1ubuntu2.20
+Seed: 123
+Progress: 1000000/1000000
+All hashes matched!
+```
+
 ## Contributing
 
 Feel free to submit issues or pull requests if you find any bugs or have improvements to suggest :)
