@@ -143,6 +143,25 @@ Batch: 1000 Seed: 87053 Progress: 1000000/1000000
 All hashes matched!
 ```
 
+### PHP murmur3a vs PHP hash3Int_fc_opt
+
+```bash
+php test_murmurhash3_optimised.php <iterations> <seed>
+```
+
+This final test is of an optimised version of the fixes applied in `hash3Int_fc_opt` against PHPs inbuilt `murmur3a`
+
+The optimised version directly incorporates the bitwise operations for mixing and shifting within the main loop and finalization steps which eliminates the need for separate function calls `$u32rs` and `$u32m`. Also the multiplication and shifting operations are combined into single expressions, and use hexadecimal constants directly within the expressions to save unnessisary shifting. Finally it removes unnecessary masking that was added for debugging.
+
+```
+php test_murmurhash3_optimised.php 1000000
+Running: 1000000 iterations
+PHP version: 8.1.2-1ubuntu2.20
+Seed: 0
+Progress: 1000000/1000000
+All hashes matched!
+```
+
 ## Contributing
 
 Feel free to submit issues or pull requests if you find any bugs or have improvements to suggest :)
